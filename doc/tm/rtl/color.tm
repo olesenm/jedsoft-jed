@@ -22,7 +22,7 @@
 \usage{(String_Type fg, String_Type bg) =  get_color (String_Type name)}
 \description
   This function returns the foreground and background colors of the
-  specified color object.  
+  specified color object.
 \seealso{set_color, color_number, add_color_object}
 \done
 
@@ -47,16 +47,16 @@
    "lightgray"        "white"
    "default"
 #v-
- One most terminals, the values in the second column have no affect
- when used as the background color.  
- 
+ On most terminals, the values in the second column have no affect
+ when used as the background color.
+
  Using "default" as a foreground or background color instructs the
  editor to tell the terminal to use the default foreground and
  background colors of the window.  If you use a terminal that uses a
  transparant background, then you need to specify "default" as the
  background color.  Not all terminals support the notion of the
- "default" color.  
- 
+ "default" color.
+
  The valid names for \var{obj} are:
 #v+
    "normal"      Default foreground/background
@@ -97,7 +97,7 @@
  If line attributes are available, then you may also specifiy the color
  of the hidden line indicator:
 #v+
-  "..."         Hidden line indicator
+   "..."         Hidden line indicator
 #v-
  The color of the menu objects may be specified via
 #v+
