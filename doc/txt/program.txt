@@ -75,7 +75,7 @@ Writing Fast Routines
          if (n == 0) return 0;
 	 
    to 
-         !if (n) return 0;
+         ifnot (n) return 0;
 	 
    since the expression `n == 0' executes in 3 units and `n' executes in
    only 1.  Similarly, the statement:
@@ -84,7 +84,7 @@ Writing Fast Routines
 	 
    may be written:
    
-         n--; !if (n) return 1;
+         n--; ifnot (n) return 1;
   
    with the side effect that n is reduced by 1 in the process.  But that is
    a good thing because we can then modify:
@@ -106,12 +106,12 @@ Writing Fast Routines
    
       define fib (n)
       {
-        !if (n) return 0;
-	n--; !if (n) return 1;
+        ifnot (n) return 0;
+	n--; ifnot (n) return 1;
 	return fib(n) + fib (n--, n);
       }
 
-   Simply counting tokens (if, !if, fib, n, ==, 1, -, etc...) shows that the
+   Simply counting tokens (if, ifnot, fib, n, ==, 1, -, etc...) shows that the
    unoptimized version has 19 whereas the optimized version has 12. Applying
    the rule of thumb to this suggests that the optimized version should run
    19/12 times faster!  The reader is encouraged to compare the speed of the
@@ -122,7 +122,7 @@ Writing Fast Routines
    S-Lang: 
    
       1.  Use the `++', `--', `+=', and `-=' forms wherever possible.
-      2.  Eliminate `if (something == 0)' in favor of `!if (something)'
+      2.  Eliminate `if (something == 0)' in favor of `ifnot (something)'
       3.  Avoid `while(1)' and use `forever' instead.
       4.  For simple looping a fixed number of times use `loop'.
       5.  If you have something like:

@@ -281,7 +281,7 @@ Answers:
 	  {
 	     c = getkey ();
 	     if (c == 0) insert("^@"); else insert (char (c));
-	     !if (input_pending (3)) break;
+	     ifnot (input_pending (3)) break;
 	  } 
       }
    

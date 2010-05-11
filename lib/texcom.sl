@@ -171,7 +171,7 @@ define tex_insert_quote ()
      }
    
    c = '[';
-   !if (bolp())
+   ifnot (bolp())
      {
 	go_left_1 ();
 	c = what_char();
@@ -226,9 +226,9 @@ define tex_is_verbatim_environment ()
 	goto_user_mark (m);
      }
    m = create_user_mark ();
-   !if (bsearch ("\\begin{verbatim}"))
+   ifnot (bsearch ("\\begin{verbatim}"))
      return 0;
-   !if (fsearch ("\\end{verbatim}"))
+   ifnot (fsearch ("\\end{verbatim}"))
      return 1;
    return m <= create_user_mark ();
 }
@@ -238,7 +238,7 @@ define tex_ldots ()
 {
    if (blooking_at (".."))
      {
-	!if (tex_is_verbatim_environment ())
+	ifnot (tex_is_verbatim_environment ())
 	  {
 	     go_left (2);
 	     deln (2);
