@@ -1544,7 +1544,7 @@ Changes since B0.99-10 {{{
          versatile.
 
    1.  TeX/LaTeX modes: Automatic conversion of ... to \dots
-       suppressed in verbatum environments.
+       suppressed in verbatim environments.
    2.  xjed: --debug-xjed command line argument added.  Currently,
        this does very little but may prove useful.
    3.  lib/chglog.sl added.  This gives jed the ability to maintain

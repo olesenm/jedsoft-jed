@@ -217,7 +217,7 @@ define latex_do_environment ()
    go_up(2);
 }
 
-define tex_is_verbatum_environment ()
+define tex_is_verbatim_environment ()
 {
    variable m;
 
@@ -226,9 +226,9 @@ define tex_is_verbatum_environment ()
 	goto_user_mark (m);
      }
    m = create_user_mark ();
-   !if (bsearch ("\\begin{verbatum}"))
+   !if (bsearch ("\\begin{verbatim}"))
      return 0;
-   !if (fsearch ("\\end{verbatum}"))
+   !if (fsearch ("\\end{verbatim}"))
      return 1;
    return m <= create_user_mark ();
 }
@@ -238,7 +238,7 @@ define tex_ldots ()
 {
    if (blooking_at (".."))
      {
-	!if (tex_is_verbatum_environment ())
+	!if (tex_is_verbatim_environment ())
 	  {
 	     go_left (2);
 	     deln (2);
