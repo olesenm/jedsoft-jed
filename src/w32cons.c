@@ -58,10 +58,6 @@ int NumLock_Is_Gold = 0;
 int PC_Alt_Char = 27;
 int PC_Fn_Char = 0;
 
-#if SLANG_VERSION < 20000
-# define SLw32_Hstdin _SLw32_Hstdin
-extern HANDLE _SLw32_Hstdin;
-#endif
 
 static unsigned char f_keys[4][12] =
 {

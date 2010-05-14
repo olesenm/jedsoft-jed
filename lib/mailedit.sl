@@ -227,12 +227,9 @@ private define mark_paragraph ()
    while (up_1 ())
      {
 	if (
-#if (_slang_version >= 20100)
-	    (create_user_mark () >= body_start) && (nquotes == count_quotes ())
-#else
-	    andelse{create_user_mark () >= body_start}{nquotes == count_quotes ()}
-#endif
-	    )
+	       (create_user_mark () >= body_start)
+	    && (nquotes == count_quotes ())
+	   )
 	  {
 	     skip_white ();
 	     ifnot (eolp ())
