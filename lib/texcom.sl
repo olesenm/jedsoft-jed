@@ -50,11 +50,11 @@ define tex_paragraph_separator ()
 
    if (looking_at ("\\"))
      {
-	if (orelse 
-	    {looking_at ("\\begin")}
-	    {looking_at ("\\item")}
-	    {looking_at ("\\end")}
-	    {re_looking_at ("\\\\[sub]+section{")})
+	if (
+	       looking_at ("\\begin")
+	    || looking_at ("\\item")
+	    || looking_at ("\\end")
+	    || re_looking_at ("\\\\[sub]+section{"))
 	  return 1;
      }
 

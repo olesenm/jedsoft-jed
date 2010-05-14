@@ -113,10 +113,10 @@ private define _write_encrypted_region (file, append)
    if (fp == NULL)
      verror ("%s failed", cmd);
    
-   if (orelse 
-       {(-1 == fputs (p + "\n", fp))}
-       {(-1 == fputs (txt, fp))}
-	 {(0 != pclose (fp))})
+   if (
+          (-1 == fputs (p + "\n", fp))
+       || (-1 == fputs (txt, fp))
+       || (0 != pclose (fp)))
      verror ("write to %s failed", cmd);
    
    return 1;
