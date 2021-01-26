@@ -1756,7 +1756,8 @@ define c_set_style (name)
      }
      {
       case "kw":
-	(0,2,1,2,1,2,2,2,0,0,2);
+	(C_Switch_Offset, C_Param_Offset_Max) = (2, -1);
+	(2,0,0,2,0,2,0,2,0,0,0);
      }
      {
 	if (is_defined ("c_set_style_hook") > 0)
